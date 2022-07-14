@@ -8,3 +8,6 @@ const mongoose = require("mongoose");
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+
+require("dotenv").config();
+const port = process.env.PORT || 3030;
