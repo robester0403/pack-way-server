@@ -5,9 +5,13 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
+const tripRoutes = require("./routes/trip-routes");
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+
+app.use("/api/trip", tripRoutes);
 
 require("dotenv").config();
 const port = process.env.PORT || 5001;
