@@ -5,12 +5,15 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
+// define the routes
 const tripRoutes = require("./routes/trip-routes");
 
+// relevant middleware here
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+// direct the routes here
 app.use("/api/trip", tripRoutes);
 
 require("dotenv").config();
